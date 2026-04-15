@@ -951,10 +951,11 @@ img { max-width: 100%; display: block; }
   right: 0;
   bottom: 0;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(248, 247, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(2px);
 }
 
 .agenticai-shield.hidden {
