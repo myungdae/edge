@@ -910,6 +910,33 @@ img { max-width: 100%; display: block; }
   border-radius: 999px;
 }
 
+/* ---------- Agentic AI iframe ---------- */
+.agenticai-section {
+  background: #f8f7ff;
+}
+
+.agenticai-frame-wrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(102, 126, 234, 0.15);
+  border: 1px solid #e0d7ff;
+  background: #fff;
+}
+
+.agenticai-frame {
+  width: 100%;
+  height: 900px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .agenticai-frame {
+    height: 600px;
+  }
+}
+
 /* ---------- Portfolio Coming Soon ---------- */
 .portfolio-coming {
   display: flex;
