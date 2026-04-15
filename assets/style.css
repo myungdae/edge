@@ -914,26 +914,73 @@ img { max-width: 100%; display: block; }
 .agenticai-section {
   background: #f8f7ff;
   padding: 0 !important;
+  position: relative;
+  /* 외부 사이트 nav 높이(약 60px)만큼 잘라내기 */
+  overflow: hidden;
 }
 
 .agenticai-frame-wrap {
   width: 100%;
+  /* nav 높이만큼 위로 올려서 본문만 표시 */
+  margin-top: -62px;
   overflow: hidden;
   background: #fff;
 }
 
 .agenticai-frame {
   width: 100%;
-  height: 100vh;
-  min-height: 800px;
+  /* nav 잘린 만큼 높이 보정 */
+  height: calc(100vh + 62px);
+  min-height: 862px;
   border: none;
   display: block;
+  pointer-events: none; /* 기본: 스크롤 통과 */
+}
+
+/* 클릭 활성화 오버레이 */
+.agenticai-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  cursor: pointer;
+  background: transparent;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+  transition: background 0.3s;
+}
+
+.agenticai-overlay:hover {
+  background: rgba(102, 126, 234, 0.04);
+}
+
+.agenticai-overlay-msg {
+  background: rgba(102, 126, 234, 0.85);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s;
+}
+
+/* 활성화 후 오버레이 숨김 */
+.agenticai-overlay.hidden {
+  display: none;
+}
+
+/* 활성화 후 iframe 클릭 허용 */
+.agenticai-frame.active {
+  pointer-events: auto;
 }
 
 @media (max-width: 768px) {
   .agenticai-frame {
-    height: 100vh;
-    min-height: 600px;
+    height: calc(100vh + 62px);
+    min-height: 662px;
   }
 }
 

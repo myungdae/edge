@@ -165,6 +165,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Agentic AI iframe 클릭 활성화 ---------- */
+  const agenticaiOverlay = document.getElementById('agenticaiOverlay');
+  const agenticaiFrame = document.querySelector('.agenticai-frame');
+
+  if (agenticaiOverlay && agenticaiFrame) {
+    agenticaiOverlay.addEventListener('click', () => {
+      agenticaiOverlay.classList.add('hidden');
+      agenticaiFrame.classList.add('active');
+    });
+
+    // 섹션 벗어나면 다시 비활성화 (스크롤 복구)
+    const agenticaiSection = document.getElementById('agenticai');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          agenticaiOverlay.classList.remove('hidden');
+          agenticaiFrame.classList.remove('active');
+        }
+      });
+    }, { threshold: 0 });
+    if (agenticaiSection) sectionObserver.observe(agenticaiSection);
+  }
+
   /* ---------- Smooth Scroll for anchor links ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
