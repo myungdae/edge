@@ -922,7 +922,7 @@ img { max-width: 100%; display: block; }
 .agenticai-frame-wrap {
   width: 100%;
   /* nav 높이만큼 위로 올려서 본문만 표시 */
-  margin-top: -62px;
+  margin-top: -92px;
   overflow: hidden;
   background: #fff;
 }
@@ -930,8 +930,8 @@ img { max-width: 100%; display: block; }
 .agenticai-frame {
   width: 100%;
   /* nav 잘린 만큼 높이 보정 */
-  height: calc(100vh + 62px);
-  min-height: 862px;
+  height: calc(100vh + 92px);
+  min-height: 892px;
   border: none;
   display: block;
   pointer-events: none; /* 기본: 스크롤 통과 */
@@ -979,8 +979,8 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .agenticai-frame {
-    height: calc(100vh + 62px);
-    min-height: 662px;
+    height: calc(100vh + 92px);
+    min-height: 692px;
   }
 }
 
