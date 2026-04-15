@@ -206,6 +206,24 @@ img { max-width: 100%; display: block; }
 .nav-link:hover { color: #667eea; }
 .nav-link:hover::after { width: 100%; }
 
+.nav-link-agentic {
+  color: #fff !important;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 0.35rem 0.9rem !important;
+  border-radius: 999px;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.nav-link-agentic::after { display: none; }
+
+.nav-link-agentic:hover {
+  color: #fff !important;
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
