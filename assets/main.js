@@ -166,21 +166,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- Agentic AI iframe 클릭 활성화 ---------- */
-  const agenticaiOverlay = document.getElementById('agenticaiOverlay');
-  const agenticaiFrame = document.querySelector('.agenticai-frame');
+  const agenticaiShield = document.getElementById('agenticaiShield');
+  const agenticaiBtn   = document.getElementById('agenticaiBtn');
+  const agenticaiFrame = document.getElementById('agenticaiFrame');
 
-  if (agenticaiOverlay && agenticaiFrame) {
-    agenticaiOverlay.addEventListener('click', () => {
-      agenticaiOverlay.classList.add('hidden');
+  if (agenticaiBtn && agenticaiShield && agenticaiFrame) {
+    // 버튼 클릭 → 방패 숨기고 iframe 활성화
+    agenticaiBtn.addEventListener('click', () => {
+      agenticaiShield.classList.add('hidden');
       agenticaiFrame.classList.add('active');
     });
 
-    // 섹션 벗어나면 다시 비활성화 (스크롤 복구)
+    // 섹션 벗어나면 자동 비활성화 → 메인 스크롤 복구
     const agenticaiSection = document.getElementById('agenticai');
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) {
-          agenticaiOverlay.classList.remove('hidden');
+          agenticaiShield.classList.remove('hidden');
           agenticaiFrame.classList.remove('active');
         }
       });
