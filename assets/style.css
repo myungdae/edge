@@ -152,6 +152,22 @@ img { max-width: 100%; display: block; }
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer-logo .logo-icon {
+  width: 32px;
+  height: 32px;
 }
 
 .logo-edge {
