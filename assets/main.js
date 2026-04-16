@@ -165,31 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Agentic AI iframe 클릭 활성화 ---------- */
-  const agenticaiShield = document.getElementById('agenticaiShield');
-  const agenticaiBtn   = document.getElementById('agenticaiBtn');
-  const agenticaiFrame = document.getElementById('agenticaiFrame');
-
-  if (agenticaiBtn && agenticaiShield && agenticaiFrame) {
-    // 버튼 클릭 → 방패 숨기고 iframe 활성화
-    agenticaiBtn.addEventListener('click', () => {
-      agenticaiShield.classList.add('hidden');
-      agenticaiFrame.classList.add('active');
-    });
-
-    // 섹션 벗어나면 자동 비활성화 → 메인 스크롤 복구
-    const agenticaiSection = document.getElementById('agenticai');
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-          agenticaiShield.classList.remove('hidden');
-          agenticaiFrame.classList.remove('active');
-        }
-      });
-    }, { threshold: 0 });
-    if (agenticaiSection) sectionObserver.observe(agenticaiSection);
-  }
-
   /* ---------- Smooth Scroll for anchor links ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
